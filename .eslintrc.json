@@ -36,10 +36,7 @@
     "@typescript-eslint/no-use-before-define": [
       "warn",
       {
-        "functions": false,
-        "classes": false,
-        "variables": false,
-        "typedefs": false
+        "variables": false
       }
     ],
     "@typescript-eslint/camelcase": "off",
