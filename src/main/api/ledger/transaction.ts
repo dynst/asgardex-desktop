@@ -1,4 +1,5 @@
 import type Transport from '@ledgerhq/hw-transport'
+import * as TNH from '@ledgerhq/hw-transport-node-hid'
 import { ARBChain } from '@xchainjs/xchain-arbitrum'
 import { AVAXChain } from '@xchainjs/xchain-avax'
 import { BASEChain } from '@xchainjs/xchain-base'
@@ -36,7 +37,7 @@ import * as ETH from './ethereum/transaction'
 import * as LTC from './litecoin/transaction'
 import * as THOR from './thorchain/transaction'
 
-const TransportNodeHid = require('@ledgerhq/hw-transport-node-hid').default
+const { default: TransportNodeHid } = TNH
 
 const chainSendFunctions: Record<
   Chain,

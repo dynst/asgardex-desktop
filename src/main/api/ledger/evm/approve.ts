@@ -1,3 +1,4 @@
+import * as TNH from '@ledgerhq/hw-transport-node-hid'
 import { UPPER_FEE_BOUND as BASE_UPPER_FEE_BOUND } from '@xchainjs/xchain-base'
 import { FeeOption, Network, TxHash } from '@xchainjs/xchain-client'
 import { defaultEthParams, UPPER_FEE_BOUND } from '@xchainjs/xchain-ethereum'
@@ -12,7 +13,7 @@ import { defaultBscParams } from '../../../../shared/bsc/const'
 import { getDerivationPath, getDerivationPaths } from '../../../../shared/evm/ledger'
 import { ETH_MAINNET_ETHERS_PROVIDER, ETH_TESTNET_ETHERS_PROVIDER, createEthProviders } from '../ethereum/common'
 
-const TransportNodeHid = require('@ledgerhq/hw-transport-node-hid').default
+const { default: TransportNodeHid } = TNH
 
 const LOWER_FEE_BOUND = 1000000
 

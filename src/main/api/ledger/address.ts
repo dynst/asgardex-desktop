@@ -1,4 +1,5 @@
 import type Transport from '@ledgerhq/hw-transport'
+import * as TNH from '@ledgerhq/hw-transport-node-hid'
 import { ARBChain } from '@xchainjs/xchain-arbitrum'
 import { AVAXChain } from '@xchainjs/xchain-avax'
 import { BASEChain } from '@xchainjs/xchain-base'
@@ -32,7 +33,7 @@ import { getEVMAddress, verifyEVMAddress } from './evm/address'
 import { getAddress as getLTCAddress, verifyAddress as verifyLTCAddress } from './litecoin/address'
 import { getAddress as getTHORAddress, verifyAddress as verifyTHORAddress } from './thorchain/address'
 
-const TransportNodeHid = require('@ledgerhq/hw-transport-node-hid').default
+const { default: TransportNodeHid } = TNH
 
 const handleEVMChain = (
   chain: Chain,
