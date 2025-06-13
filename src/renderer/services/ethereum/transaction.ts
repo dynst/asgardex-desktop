@@ -59,7 +59,7 @@ export const createTransactionService = (client$: Client$, network$: Network$): 
     return FP.pipe(
       sequenceSOption({ address: getEVMAssetAddress(params.asset), router: params.router }),
       O.fold(
-        () => failure$(`Invalid values: Asset ${params.asset} / router address ${params.router}`),
+        (): TxHashLD => failure$(`Invalid values: Asset ${params.asset} / router address ${params.router}`),
         ({ router }) =>
           FP.pipe(
             Rx.forkJoin({

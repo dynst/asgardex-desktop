@@ -42,7 +42,7 @@ export const createTransactionService = (client$: Client$, network$: Network$): 
     return FP.pipe(
       sequenceSOption({ router: params.router }),
       O.fold(
-        () => failure$(`Invalid values: Asset ${params.asset} / router address ${params.router}`),
+        (): TxHashLD => failure$(`Invalid values: Asset ${params.asset} / router address ${params.router}`),
         ({ router }) =>
           Rx.of(null).pipe(
             // Start the pipeline with sender address
